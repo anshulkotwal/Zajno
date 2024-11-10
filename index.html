@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAMAAADUMSJqAAAAWlBMVEXw8PAAAADZ2dnz8/P39/fQ0NCWlpaPj4/7+/vHx8fl5eWTk5P///+JiYmZmZne3t65ubmgoKCmpqYhISF5eXnAwMBfX188PDwxMTFaWlpHR0cODg5NTU2srKwfS63+AAABNElEQVRoge2X227DIAyGoXFTAknadMuyU9//NUsPSyCgZLKhnSZ/l1x8sn7bIIRgGIZhGIZh/i/FAmT5ZgENJH+xlQu8vO4hm9zSq4xyucEnsy5/w5e+Lpdo92/kFTqXZ8t1RvmQs6EH/Bqtypsa7V6VG8KCimJvyhvmPeamXC3WDnfqQyQTSt0u9S5p3r67CdxlqrqVCdwtLe8JaNPOiYsqH5t3KrcK3VKry3jSn38IeynlR2v3qqsEsamRvCcGwrV1qTtcTKM/nfBJQ/M1d3fKG/oeHzx0gRsEuDfBN750NcwzsTPoyQmvv5i5r/Pty7fYXOZvxfGaQSp55btvg5dF3t57l0P+484hP44zl0gO/eg4TYsOTRK50OMXBaKnFqxaOP+t+GmKXxfDMAzDMAzzZzkD+3gLPHHgvPwAAAAASUVORK5CYII="
+        type="image/png">
+    <title>Zajno</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+    <style>
+        img {
+            opacity: 0;
+        }
+
+        #showreelVideo {
+            padding: 120px;
+            background-color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main data-scroll-container bg-[#EBEBEB] w-full font-['Helvetica_Now_Display']">
+        <div class="landing relative">
+            <div class="flex absolute top-0 left-0 w-full justify-between px-4 py-5 z-[10000]">
+                <a class="font-bold text-lg tracking-tighter" href="#">Zajno</a>
+                <a class="font-bold text-lg tracking-tighter" href="#">Digital Studio</a>
+                <div class="flex flex-col ml-40">
+                    <a class="font-bold text-lg tracking-tighter" href="#">Work</a>
+                    <a class="font-bold text-lg tracking-tighter" href="#">Studio</a>
+                    <a class="font-bold text-lg tracking-tighter" href="#">Contact</a>
+                </div>
+                <div class="flex gap-4">
+                    <a class="font-bold text-lg tracking-tighter uppercase" href="#">Twitter</a>
+                    <a class="font-bold text-lg tracking-tighter uppercase" href="#">Instagram</a>
+                </div>
+                <a class="font-bold" href="#">Los Angeles, CA</a>
+            </div>
+            <div class="branding">
+                <img src="/images.png" alt="Branding Image">
+            </div>
+        </div>
+        <div class="video-container relative w-full">
+            <button onclick="playVideo()"
+                class="play-button absolute text-white text-4xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-5 py-5 z-[99999]"
+                style="font-family: 'Nu-Century-Gothic', sans-serif;">
+                <img src="/ong.png" alt="Play Icon" class="w-16 h-16 mr-2 inline rounded-full border-gray-400">
+                <span>Watch Showreel</span>
+            </button>
+            <img src="/2.jpeg" alt="Video Thumbnail" class="thumbnail-image w-full h-auto">
+            <video id="showreelVideo" class="hidden video-frame" controls>
+                <source src="/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function playVideo() {
+                const video = document.getElementById('showreelVideo');
+                const thumbnail = document.querySelector('.thumbnail-image');
+                const playButton = document.querySelector('.play-button');
+
+                thumbnail.classList.add('hidden');
+                playButton.classList.add('hidden');
+
+                video.classList.remove('hidden');
+                video.play();
+            }
+            document.getElementById('showreelVideo').addEventListener('click', function () {
+                this.pause();
+                this.currentTime = 0;
+            });
+        </script>
+
+        <div class="work flex items-start px-5 py-10">
+            <div class="part1 w-[20%] py-10 flex items-end">
+                <h3 class="text-3xl font-bold" style="font-family: 'Nu-Century-Gothic', sans-serif;">Work</h3>
+                <svg width="32" height="32" viewBox="0 0 18 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.66411 6.8359L3.414 0.585785L0.585571 3.41421L6.83568 9.66432L4.00002 12.5L5.50002 14H14V5.49999L12.5 3.99999L9.66411 6.8359Z"
+                        fill="#000000"></path>
+                </svg>
+            </div>
+            <div class="part2 w-[80%] py-10">
+                <div class="flex justify-between">
+                    <p class="font-bold text-3xl w-5/12" style="font-family: 'Nu-Century-Gothic', sans-serif;">At Zajno,
+                        we know your time is precious, and that's why we
+                        prioritize simplicity and efficiency. Our team has the expertise and creativity to handle
+                        everything from research and planning to custom design and development, freeing you from the
+                        burden of micromanagement.</p>
+                    <p class="font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">©2015-24</p>
+                </div>
+                <div class="projects mt-20">
+                    <div class="project mt-4 flex items-start justify-between border-t-2 pt-4 border-black">
+                        <h4 class="font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">01</h4>
+                        <h1 class="font-bold text-3xl w-[20rem] z-[9999]"
+                            style="font-family: 'Nu-Century-Gothic', sans-serif;">
+                            Design & Development of the Website's 3 Pages</h1>
+                        <div>
+                            <h3 class="text-red-600 font-bold text-3xl"
+                                style="font-family: 'Nu-Century-Gothic', sans-serif;">Brightmark</h3>
+                            <h3 class="font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">
+                                Technology</h3>
+                        </div>
+                        <div class="imagediv w-[240px]">
+                            <img src="/apple.jpg" alt="Project Image" style="width: 100%; height: auto;">
+                        </div>
+                    </div>
+                    <div class="project mt-4 flex items-start justify-between border-t-2 pt-4 border-black">
+                        <h4 class="font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">02</h4>
+                        <h1 class="font-bold text-3xl w-[20rem]" style="font-family: 'Nu-Century-Gothic', sans-serif;">
+                            Homepage design,2D illustrations,animation,visual
+                            identity</h1>
+                        <div>
+                            <h3 class="text-red-600 font-bold text-3xl"
+                                style="font-family: 'Nu-Century-Gothic', sans-serif;">Ooki</h3>
+                            <h3 class="font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">Crypto
+                            </h3>
+                        </div>
+                        <div class="imagediv w-[240px]">
+                            <img src="/7bcc330f-d653-4592-bf66-e6ca37f4e639_cover_home_ooki_d.jpg" alt="Project Image">
+                        </div>
+                    </div>
+                    <div class="project mt-4 flex items-start justify-between border-t-2 pt-4 border-black">
+                        <h4 class="font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">03</h4>
+                        <h1 class="font-bold text-3xl w-[20rem]" style="font-family: 'Nu-Century-Gothic', sans-serif;">
+                            Full-cycle website creation,branding</h1>
+                        <div>
+                            <h3 class="text-red-600 font-bold text-3xl"
+                                style="font-family: 'Nu-Century-Gothic', sans-serif;">8Finance</h3>
+                            <h3 class="font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">Crypto
+                            </h3>
+                        </div>
+                        <div class="imagediv w-[240px]">
+                            <img src="/23e19a77-92dd-407b-9f2f-956189864cb9_cover_home_8finance_d.jpg"
+                                alt="Project Image">
+                        </div>
+                    </div>
+                    <div class="project mt-4 flex items-start justify-between border-t-2 pt-4 border-black">
+                        <h4 class="font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">04</h4>
+                        <h1 class="font-bold text-3xl w-[20rem]" style="font-family: 'Nu-Century-Gothic', sans-serif;">
+                            Full-cycle website creation,branding</h1>
+                        <div>
+                            <h3 class="text-red-600 font-bold text-3xl"
+                                style="font-family: 'Nu-Century-Gothic', sans-serif;">Altered state machine</h3>
+                            <h3 class="font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">
+                                Technology</h3>
+                        </div>
+                        <div class="imagediv w-[240px]">
+                            <img src="/decf67bd-a25e-4a32-8c81-d1274ddadc40_cover_home_asm_d2.jpg" alt="Project Image">
+                        </div>
+                    </div>
+                    <div class="project mt-4 flex items-start justify-between border-t-2 pt-4 border-black">
+                        <h4 class="font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">05</h4>
+                        <h1 class="font-bold text-3xl w-[20rem]" style="font-family: 'Nu-Century-Gothic', sans-serif;">
+                            Full-cycle website creation</h1>
+                        <div>
+                            <h3 class="text-red-600 font-bold text-3xl"
+                                style="font-family: 'Nu-Century-Gothic', sans-serif;">Masio</h3>
+                            <h3 class="font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">AI
+                                platform and app</h3>
+                        </div>
+                        <div class="imagediv w-[240px]">
+                            <img src="/65a802787a5e8b1120d5a078_cover_home_maslo_d.jpg" alt="Project Image">
+                        </div>
+                    </div>
+                </div>
+                <hr class="w-full my-4 border-t-2 border-black">
+            </div>
+        </div>
+        <div class="studio px-4 py-5 flex items-start">
+            <div class="flex items-start">
+                <div class="flex w-[20%] items-end gap-4 px-20">
+                    <h1 class="text-3xl font-bold" style="font-family: 'Nu-Century-Gothic', sans-serif;">Studio</h1>
+                    <svg width="22" height="22" viewBox="0 0 18 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.66411 6.8359L3.414 0.585785L0.585571 3.41421L6.83568 9.66432L4.00002 12.5L5.50002 14H14V5.49999L12.5 3.99999L9.66411 6.8359Z"
+                            fill="#000000"></path>
+                    </svg>
+                </div>
+                <p class="w-1/4 font-bold text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">We're a
+                    digital design studio that's all about breaking the mold! We
+                    don't do boring websites or ordinary apps - we specialize in crafting the wildest, most
+                    unconventional digital experiences out there.</p>
+            </div>
+            <div class="w-[100%] mt-5">
+                <img class="w-full" src="/bc44b8bd-3c68-4191-9343-95c5211b9eba_1_1@2.jpg" alt="">
+            </div>
+        </div>
+        <hr class="w-full my-4 border-t-2 border-gray-400">
+        <div class="sevenonefive select-none w-full relative h-[80vh] mt-32 overflow-hidden">
+            <div class="w-full flex justify-between top-0 z-[99999] left-0 px-10 font-bold"
+                style="font-family: 'Nu-Century-Gothic', sans-serif;">
+                <div class="w-[300px] h-72 flex flex-col justify-center mt-[-40px]">
+                    <img class="w-full" src="/fc7f9980-8245-4b09-b7af-40d7ca673661_01_01.jpg" alt="">
+                    <p class="text-gray-800 mt-1">Motion.ed — 2023</p>
+                </div>
+                <div class="w-72 mt-10">
+                    <img src="/9d26e3e6-252a-45c8-b21b-fd0a60372a52_01_02.jpg" alt="">
+                    <p class="mt-1">The power of sound — 2019</p>
+                </div>
+                <div class="w-72 mt-10 ">
+                    <img class="w-full" src="/bf2a49a2-e253-41d4-acc5-35b83c87b3d8_01_03.jpg" alt="">
+                    <p class="mt-1">TL/E — 2023</p>
+                </div>
+                <div class="w-72 mt-10">
+                    <img class="w-full" src="/04a9f05e-a57b-443e-93be-558da6601d14_01_04.jpg" alt="">
+                    <p class="mt-1">Zajno Grid - 2018</p>
+                </div>
+            </div>
+            <h1
+                class="text-[70rem] absolute -bottom-1/2 z-[10] left-[46%] -translate-x-1/2 leading-none font-bold text-[#FF3928]">
+                715</h1>
+        </div>
+        <hr class="w-full border-t-2 border-gray-400">
+        <footer class="flex items-center py-8 px-4 text-3xl" style="font-family: 'Nu-Century-Gothic', sans-serif;">
+            <div class="w-[40%] text-gray-800 font-bold">zajno</div>
+            <div class="text-center space-y-2 w-[30%] border-l border-r border-gray-400 px-4">
+                <ul class="text-gray-800 space-y-1">
+                    <li>Work</li>
+                    <li>Studio</li>
+                    <li>Contact</li>
+                </ul>
+                <p>©zajno 2024</p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="space-y-2 text-right w-[20%]">
+                <ul class="text-gray-800 font-medium space-y-1">
+                    <li>Instagram</li>
+                    <li>Twitter</li>
+                    <li>LinkedIn</li>
+                    <li>Clutch</li>
+                    <li>Dribbble</li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+    <canvas class="top-0 left-0 fixed z-[9999]" id="canvas"></canvas>
+    <script type="module" src="/src/main.js" defer></script>
+</body>
+
+</html>
